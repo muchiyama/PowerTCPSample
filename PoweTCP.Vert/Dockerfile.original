@@ -1,0 +1,25 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1-buster-slim AS base
+#FROM microsoft/dotnet:2.1-aspnetcore-runtime
+#FROM microsoft/dotnet:2.0-runtime
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+#FROM microsoft/dotnet:2.1-sdk AS build-env
+#FROM microsoft/dotnet:2.0-sdk AS build-env
+WORKDIR /src
+#COPY ["Poraris.Vert/Poraris.Vert.csproj", "Poraris.Vert/"]
+COPY ["Poraris.Vert/", "Poraris.Vert/"]
+RUN dotnet restore "Poraris.Vert/Poraris.Vert.csproj"
+COPY . .
+WORKDIR "/src/Poraris.Vert"
+RUN dotnet build "Poraris.Vert.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "Poraris.Vert.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Poraris.Vert.dll"]

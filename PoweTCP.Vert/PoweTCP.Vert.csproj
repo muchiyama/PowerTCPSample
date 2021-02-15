@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<LangVersion>9.0</LangVersion>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Kubernetes.Tools.Targets" Version="1.1.0" />
+		<!--<PackageReference Include="PowerTCPFTP.Standard" Version="4.7.8.2" />-->
+		<PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+		<Reference Include="PowrDart.MailDart.Mail.Standard">
+			<HintPath>dll/Dart.Mail.Standard.dll</HintPath>
+		</Reference>
+		<Reference Include="PowerTCPFTP.Standard">
+			<HintPath>dll/Dart.Ftp.Standard.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>

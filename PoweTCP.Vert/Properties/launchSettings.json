@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Poraris.Vert": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
